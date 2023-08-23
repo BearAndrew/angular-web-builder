@@ -6,18 +6,20 @@ import { EditComponent } from './edit.component';
 import { ContentComponentsModule } from 'src/app/content-components/content-components.module';
 import { InspectorComponent } from './inspector/inspector.component';
 import { FormsModule } from '@angular/forms';
+import { NumberFilterPipe } from 'src/app/core/pipes/number-filter.pipe';
 
 
 @NgModule({
   declarations: [
     EditComponent,
-    InspectorComponent
+    InspectorComponent,
+    NumberFilterPipe
   ],
   imports: [
     FormsModule,
     CommonModule,
     EditRoutingModule,
-    ContentComponentsModule
+    ContentComponentsModule,
   ]
 })
 export class EditModule { }

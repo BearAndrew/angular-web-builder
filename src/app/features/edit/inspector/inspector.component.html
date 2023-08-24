@@ -20,7 +20,17 @@
         <input *ngIf="config[item.key].type == 'text_input'"
           class="px-2 py-1 border border-solid border-gray-200 rounded-md outline-blue-200"
           [(ngModel)]="item.value" (blur)="inputChange(item)">
+
+
+        <mat-slider *ngIf="config[item.key].type == 'slider'" thumbLabel
+          [displayWith]="formatLabel" [ngModel]="item.value"
+          (ngModelChange)="item.value=$event; inputChange(item)"
+          step="0.05" min="0" max="1" aria-label="units">
+        </mat-slider>
+
+
       </ng-container>
+
 
       </div>
   </div>

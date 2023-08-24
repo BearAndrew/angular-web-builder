@@ -7,7 +7,7 @@ import { ContentComponentsModule } from 'src/app/content-components/content-comp
 import { InspectorComponent } from './inspector/inspector.component';
 import { FormsModule } from '@angular/forms';
 import { NumberFilterPipe } from 'src/app/core/pipes/number-filter.pipe';
-
+import { MatSliderModule } from '@angular/material/slider';
 
 @NgModule({
   declarations: [
@@ -20,6 +20,7 @@ import { NumberFilterPipe } from 'src/app/core/pipes/number-filter.pipe';
     CommonModule,
     EditRoutingModule,
     ContentComponentsModule,
+    MatSliderModule,
   ]
 })
 export class EditModule { }

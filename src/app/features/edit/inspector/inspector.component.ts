@@ -10,7 +10,9 @@ interface KeyValueWithType {
 enum DynamicInputType {
   SELECT = 'select',
   NUMBER_INPUT = 'number_input',
-  TEXT_INPUT = 'text_input'
+  TEXT_INPUT = 'text_input',
+  SLIDER = 'slider',
+  COLOR = 'color'
 }
 
 const textTagOptions = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'span', 'div'];
@@ -44,7 +46,7 @@ export class InspectorComponent implements OnInit {
       option: fontFamilyOptions
     },
     opacity: {
-      type: DynamicInputType.NUMBER_INPUT
+      type: DynamicInputType.SLIDER
     },
     textalign: {
       type: DynamicInputType.SELECT,
@@ -65,6 +67,7 @@ export class InspectorComponent implements OnInit {
 
   @Input('activeConfig')activeConfig: ActiveConfig;
   keyValueWithTypeList: KeyValueWithType[] = [];
+  color1: string = '#2889e9';
 
   constructor(private pageConfigService: PageConfigService) { }
 
@@ -111,7 +114,14 @@ export class InspectorComponent implements OnInit {
 
   enterBlur(event: any) {
     event.target.blur();
-    // console.log(event)
+  }
+
+  formatLabel(value: number) {
+    return value;
+  }
+
+  onEventLog(event: string, data: any): void {
+    console.log(event, data);
   }
 
 }
